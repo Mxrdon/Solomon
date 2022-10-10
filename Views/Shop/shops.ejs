@@ -1,0 +1,124 @@
+<% layout('layout/boilerplate') -%>
+
+<h1 class="text-center text-muted">AVAILABLE STORES</h1>
+<div class="container mt-4 rounded" id="bg">
+    <div class="row">
+        <div class="col-md-6 col-12 mb-3 py-3 px-5 ">
+            <a class=" btn btn-primary" type="button"id="butanch" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">FOOD AND PASTERIES</a>
+           
+            <div class="offcanvas offcanvas-end " tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel" style="width: 500px ;" >
+                <div class="offcanvas-header text-center">
+                    <h5 id="offcanvasRightLabel" >STORES</h5>
+                    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                
+         <%for(let store of stores){%>
+           <% if(store.categories==='food&pastery'){%>
+           
+                <div class="offcanvas-body d-flex row ">
+                   <div class="text-center ">
+                    <div class="col" style="height:10px ;">
+                       <h5><%=store.title%></h5> 
+                       <p class="text-muted"><%=store.location%></p>
+                       <a href="/shop/<%=store._id%>" class="btn btn-success">VIEW</a>
+                    </div>
+                    
+                   </div>
+                    
+                </div>
+                <% }%>
+                <% }%>
+            </div>
+         </div>
+
+
+         <div class="col-md-6 col-12 mb-3 py-3 px-5">
+            <a class=" btn btn-warning" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRigh" aria-controls="offcanvasRight" id="butanch">CLOTHING</a>
+           
+            <div class="offcanvas offcanvas-end " tabindex="-1" id="offcanvasRigh" aria-labelledby="offcanvasRightLabel" style="width: 500px ;" >
+                <div class="offcanvas-header text-center">
+                    <h5 id="offcanvasRightLabel" >STORES</h5>
+                    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                
+         <%for(let store of stores){%>
+           <% if(store.categories==='clothing'){%>
+           
+                <div class="offcanvas-body d-flex row ">
+                   <div class="text-center ">
+                    <div class="col" style="height:10px ;">
+                       <h5><%=store.title%></h5> 
+                       <p class="text-muted"><%=store.location%></p>
+                       <button type="button" class="btn btn-success">VIEW</button>
+                    </div>
+                    
+                   </div>
+                    
+                </div>
+                <% }%>
+                <% }%>
+            </div>
+         </div>
+        
+         <div class="col-md-6 col-12 mb-3 py-3 px-5">
+            <a class=" btn btn-warning"id="butanch" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRig" aria-controls="offcanvasRight">HOUSEHOLD APPLIANCES</a>
+           
+            <div class="offcanvas offcanvas-end " tabindex="-1" id="offcanvasRig" aria-labelledby="offcanvasRightLabel" style="width: 500px ;" >
+                <div class="offcanvas-header text-center">
+                    <h5 id="offcanvasRightLabel" >STORES</h5>
+                    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                
+         <%for(let store of stores){%>
+           <% if(store.categories==='householdappliances'){%>
+           
+                <div class="offcanvas-body d-flex row ">
+                   <div class="text-center ">
+                    <div class="col" style="height:10px ;">
+                       <h5><%=store.title%></h5> 
+                       <p class="text-muted"><%=store.location%></p>
+                       <button type="button" class="btn btn-success">VIEW</button>
+                    </div>
+                    
+                   </div>
+                    
+                </div>
+                <% }%>
+                <% }%>
+            </div>
+         </div>
+
+         <div class="col-md-6 col-12 mb-3 py-3 px-5">
+            <a class=" btn btn-primary" id="butanch"type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRi" aria-controls="offcanvasRight">TECH</a>
+           
+            <div class="offcanvas offcanvas-end " tabindex="-1" id="offcanvasRi" aria-labelledby="offcanvasRightLabel" style="width: 500px ;" >
+                <div class="offcanvas-header text-center">
+                    <h5 id="offcanvasRightLabel" >STORES</h5>
+                    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                
+         <%for(let store of stores){%>
+           <% if(store.categories==='technology'){%>
+           
+                <div class="offcanvas-body d-flex row ">
+                   <div class="text-center ">
+                    <div class="col" style="height:10px ;">
+                       <h5><%=store.title%></h5> 
+                       <p class="text-muted"><%=store.location%></p>
+                       <button type="button" class="btn btn-success">VIEW</button>
+                    </div>
+                    
+                   </div>
+                    
+                </div>
+                <% }%>
+                <% }%>
+            </div>
+         </div>
+    </div>
+</div>
+
+
+   
+
+ 

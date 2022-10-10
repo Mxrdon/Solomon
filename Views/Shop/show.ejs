@@ -1,0 +1,105 @@
+<% layout('layout/boilerplate') -%>
+<section class="toggler">
+    <button class="btn btn-primary " type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">ORDERS</button>
+
+<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+  <div class="offcanvas-header">
+    <h5 id="offcanvasRightLabel">Offcanvas right</h5>
+    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body">
+    ...
+  </div>
+</div>
+</section>
+
+<h1 class="text-center"><%=shop.title%></h1>
+<section class="container rounded" id="bg2">
+
+   
+ 
+   
+    <div class="owl-carousel owl-theme">
+        <%for(let good of shop.goods){%>
+      <div class="bg-info me-3 mt-3 text-center " id="cardi">
+        <div class="card" id="card">
+            <img src="/image/logo.png" alt="" class="card-img-top" >
+            <div class="card-body">
+                <div class="card-title">
+                    <%=good.title%></div>
+                <p class="card-text"><span class="text-muted">PRICE:$</span></p>
+               <!-- <a class="btn btn-success" role="button" href="/shop/order">VIEWS</a> -->
+                 <form class="d-iNline" action="/shop/good/<%=good._id%>" method="post"> 
+                   <button class="btn btn-success"> ADD ORDER</button>
+                 </form> 
+            </div>
+        </div>
+      </div>
+      <%}%>
+      <!-- <div class="bg-info me-3">
+        <div class="card"id="card">
+            <img src="" alt="" class="card-img-top">
+            <div class="card-body">
+                <div class="card-title">ok</div>
+                <p class="card-text">o</p>
+            </div>
+        </div>
+      </div>
+      <div class="bg-info me-3">
+        <div class="card" id="card">
+            <img src="" alt="" class="card-img-top">
+            <div class="card-body">
+                <div class="card-title">ok</div>
+                <p class="card-text">o</p>
+            </div>
+        </div>
+      </div>
+      <div class="bg-info me-3">
+        <div class="card"id="card">
+            <img src="" alt="" class="card-img-top">
+            <div class="card-body">
+                <div class="card-title">ok</div>
+                <p class="card-text">o</p>
+            </div>
+        </div>
+      </div>
+      <div class="bg-info me-3">
+        <div class="card" id="card">
+            <img src="" alt="" class="card-img-top">
+            <div class="card-body">
+                <div class="card-title">ok</div>
+                <p class="card-text">o</p>
+            </div>
+        </div>
+      </div> </div> -->
+    </div>
+
+</section>
+<h1 class="text-center text-muted"> ADD NEW ITEMS </h1>
+<section class="container mt-3 rounded " id="bg3">
+
+    <div class="row">
+        <div class=" col-6 offset-3"></div>
+
+        <form action="/shop/<%=shop._id%>/item"  method="post" novalidate class="validatedform">
+            <div class="mb-3">
+                <label for="item" class="form-label">Enter Item</label>
+                <input type="text"  class="form-control" name="good[title]" id="item" placeholder="enter item"></div>
+            </div>
+            <div class="mb-3">
+                <label for="price" class="form-label">Enter Price</label>
+                <input type="text"  class="form-control" name="good[price]" id="price" placeholder="enter price"></div>
+            </div>
+            <button class="btn btn-primary" type="submit">ENTER</button>
+        </form>
+    </div>
+    
+
+    </section>
+
+
+
+
+
+
+

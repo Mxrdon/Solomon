@@ -1,0 +1,44 @@
+<% layout('layout/boilerplate') -%>
+<div class="row">
+    <h1 class="text-center">REGISTER SHOP</h1>
+    <div class="col-6 offset-3">
+       <form action="/shop/shops" method="post" novalidate class="validatedform" >
+          <div class="mb-3">
+           <label class="form-label" for="title">SHOP NAME</label>
+           <input class="form-control" type="text" id="title" name="shop[title]" placeholder="enter title" required>
+           <div class="valid-feedback">
+             Looks good
+           </div>
+          </div >
+    
+          <div class="mb-3">
+             <label class="form-label" for="location">LOCATION</label>
+             <input class="form-control" type="text" id="location" name="shop[location]" placeholder="enter location" required>
+          </div>
+          <div class="mb-3">
+            <label for="cateory" class="form-label">CATEGORY</label>
+            <select name="shop[categories]" class="form-select" aria-label="Default select example" id="category">
+               <% for(let category of categories){%>
+               <option value="<%=category%>" ><%=category%></option>
+               <%}%>
+           </select>
+          </div>
+          
+          <!-- <div class="mb-3">
+             <label class="form-label" for="image">IMAGE URL</label>
+             <input class="form-control" type="text" id="image" name="campground[image]" placeholder="enter image url" required>
+          </div> -->
+          
+          <div class="mb-3">
+             <label class="form-label" for="description">DESCRIPTION</label>
+             <textarea class="form-control" type="text" id="description" name="shop[description]" placeholder="enter description" required></textarea>
+          </div>
+          
+          <div class="mb-3 ">
+             <button class="btn btn-primary">ADD SHOP</button>
+          </div>
+          
+         </form>
+    
+    
+ </div>
